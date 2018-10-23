@@ -1,0 +1,21 @@
+.login-pf body {
+    background: #0f0f0f url("../img/javadays-logo.png") top no-repeat;
+    background-color: white;
+}
+
+.login-pf-page {
+    margin-top: 240px;
+}
+
+.card-pf {
+  background: #fff;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 500px;
+  border-top: 0;
+  box-shadow: 0 0 0;
+}
+
+#kc-header-wrapper {
+    display: none;
+}
