@@ -14,11 +14,14 @@ import static java.util.stream.Collectors.joining;
 @RequiredArgsConstructor
 public class IndexController {
 
+    private final NameService nameService;
+
     @GetMapping("/")
     public String index(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null) {
-            model.addAttribute("name", authentication.getName());
+            String name = nameService.name();
+            model.addAttribute("name", name != null ? name : authentication.getName());
             model.addAttribute("roles", authentication.getAuthorities()
                     .stream()
                     .map(GrantedAuthority::getAuthority)
